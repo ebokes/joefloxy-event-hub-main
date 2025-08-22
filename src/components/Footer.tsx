@@ -224,7 +224,7 @@ const Footer = () => {
               Subscribe to our newsletter for event planning tips, new products,
               and exclusive offers.
             </p>
-            <div className="flex gap-4 max-w-md mx-auto">
+            <div className="flex flex-wrap justify-center gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
