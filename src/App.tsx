@@ -11,6 +11,7 @@ import MarketplacePage from "./pages/MarketplacePage";
 import GalleryPage from "./pages/GalleryPage";
 import BookingPage from "./pages/BookingPage";
 import NotFound from "./pages/NotFound";
+import ContactPage from "./pages/ContactPage";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/booking" element={<BookingPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/floral-catalog" element={<FloralCatalog />} />
+          <Route path="/contact" element={<ContactPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

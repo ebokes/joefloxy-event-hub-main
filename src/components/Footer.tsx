@@ -1,4 +1,13 @@
-import { Facebook, Instagram, Twitter, Linkedin, Youtube, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import {
+  faFacebookF,
+  faInstagram,
+  faThreads,
+  faWhatsapp,
+  faXTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,35 +17,65 @@ const Footer = () => {
       { name: "Event Planning", href: "#services" },
       { name: "Event Decoration", href: "#services" },
       { name: "Event Rentals", href: "#services" },
-      { name: "Custom Packages", href: "#contact" }
+      { name: "Custom Packages", href: "#contact" },
     ],
     marketplace: [
       { name: "Table Decorations", href: "#marketplace" },
       { name: "Lighting", href: "#marketplace" },
       { name: "Backdrops", href: "#marketplace" },
-      { name: "Centerpieces", href: "#marketplace" }
+      { name: "Centerpieces", href: "#marketplace" },
     ],
     company: [
       { name: "About Us", href: "#about" },
       { name: "Our Team", href: "#about" },
       { name: "Testimonials", href: "#testimonials" },
-      { name: "Portfolio", href: "#portfolio" }
+      { name: "Portfolio", href: "#portfolio" },
     ],
     support: [
       { name: "Contact Us", href: "#contact" },
       { name: "Book Consultation", href: "#contact" },
       { name: "FAQs", href: "#faq" },
-      { name: "Privacy Policy", href: "#privacy" }
-    ]
+      { name: "Privacy Policy", href: "#privacy" },
+    ],
   };
 
   const socialLinks = [
-    { icon: Facebook, href: "https://facebook.com/joefloxygloba", label: "Facebook", color: "hover:text-blue-500" },
-    { icon: Instagram, href: "https://instagram.com/joefloxygloba", label: "Instagram", color: "hover:text-pink-500" },
-    { icon: Twitter, href: "https://twitter.com/joefloxygloba", label: "Twitter", color: "hover:text-blue-400" },
-    { icon: Linkedin, href: "https://linkedin.com/company/joefloxygloba", label: "LinkedIn", color: "hover:text-blue-600" },
-    { icon: Youtube, href: "https://youtube.com/@joefloxygloba", label: "YouTube", color: "hover:text-red-500" },
-    { icon: MessageCircle, href: "https://wa.me/2341234567890", label: "WhatsApp", color: "hover:text-green-500" }
+    {
+      icon: faFacebookF,
+      href: "https://www.facebook.com/DeGlobaljoe",
+      label: "Facebook",
+      color: "hover:text-blue-700",
+    },
+    {
+      icon: faInstagram,
+      href: "https://www.instagram.com/joefloxy_global_ventures_ltd/",
+      label: "Instagram",
+      color: "hover:text-pink-500",
+    },
+    {
+      icon: faXTwitter,
+      href: "https://twitter.com/joefloxygloba",
+      label: "X (Twitter)",
+      color: "hover:text-black",
+    },
+    {
+      icon: faThreads,
+      href: "https://www.threads.com/@joefloxy_global_ventures_ltd?xmt=AQF0nq88ofSQiHJV6wbl5YrFO7c-LUa023fxkYnwYPcCTI0",
+      label: "Threads",
+      color: "hover:text-black",
+    },
+    {
+      icon: faYoutube,
+      href: "https://youtube.com/",
+      label: "YouTube",
+      color: "hover:text-red-500",
+    },
+    {
+      icon: faWhatsapp,
+      href: "https://wa.me/2347036684105",
+      label: "WhatsApp",
+      color: "hover:text-green-500",
+    },
   ];
 
   return (
@@ -51,28 +90,43 @@ const Footer = () => {
                 JOEFLOXY GLOBAL
               </h3>
               <p className="text-primary-foreground/80 text-lg leading-relaxed">
-                Creating unforgettable moments through premium event planning, decoration, and rental services. Your vision, our expertise.
+                Creating unforgettable moments through premium event planning,
+                decoration, and rental services. Your vision, our expertise.
               </p>
             </div>
-            
+
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent" />
-                <span>+234 123 456 7890</span>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => window.open("tel:+2347036684105", "_self")}
+                >
+                  +234 703 668 4105
+                </span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent" />
-                <span>hello@joefloxygloba.com</span>
+                <span
+                  className="cursor-pointer"
+                  onClick={() =>
+                    window.open("mailto:kingsleyogbumuo94@gmail.com", "_self")
+                  }
+                >
+                  hello@joefloxyglobal.com
+                </span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-accent" />
-                <span>123 Event Plaza, Lagos, Nigeria</span>
+                <span>62 New Market Road, Onitsha, Anambara, Nigeria</span>
               </div>
             </div>
 
             {/* Social Links */}
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-accent">Follow Us</h4>
+              <h4 className="text-lg font-semibold mb-4 text-accent">
+                Follow Us
+              </h4>
               <div className="grid grid-cols-2 gap-3">
                 {socialLinks.map((social) => (
                   <a
@@ -83,7 +137,7 @@ const Footer = () => {
                     className={`flex items-center gap-3 p-3 bg-primary-foreground/10 rounded-lg transition-all duration-300 hover:bg-primary-foreground/20 hover:scale-105 ${social.color}`}
                     aria-label={social.label}
                   >
-                    <social.icon className="w-5 h-5" />
+                    <FontAwesomeIcon icon={social.icon} className="text-xl" />
                     <span className="font-medium">{social.label}</span>
                   </a>
                 ))}
@@ -110,7 +164,9 @@ const Footer = () => {
 
           {/* Marketplace */}
           <div>
-            <h4 className="text-xl font-semibold mb-6 text-accent">Marketplace</h4>
+            <h4 className="text-xl font-semibold mb-6 text-accent">
+              Marketplace
+            </h4>
             <ul className="space-y-3">
               {footerLinks.marketplace.map((link) => (
                 <li key={link.name}>
@@ -165,7 +221,8 @@ const Footer = () => {
           <div className="max-w-2xl mx-auto text-center">
             <h4 className="text-2xl font-bold mb-4">Stay Updated</h4>
             <p className="text-primary-foreground/80 mb-6">
-              Subscribe to our newsletter for event planning tips, new products, and exclusive offers.
+              Subscribe to our newsletter for event planning tips, new products,
+              and exclusive offers.
             </p>
             <div className="flex gap-4 max-w-md mx-auto">
               <input
@@ -187,13 +244,22 @@ const Footer = () => {
               © {currentYear} JOEFLOXY GLOBAL. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#privacy" className="text-primary-foreground/80 hover:text-accent transition-colors">
+              <a
+                href="#privacy"
+                className="text-primary-foreground/80 hover:text-accent transition-colors"
+              >
                 Privacy Policy
               </a>
-              <a href="#terms" className="text-primary-foreground/80 hover:text-accent transition-colors">
+              <a
+                href="#terms"
+                className="text-primary-foreground/80 hover:text-accent transition-colors"
+              >
                 Terms of Service
               </a>
-              <a href="#cookies" className="text-primary-foreground/80 hover:text-accent transition-colors">
+              <a
+                href="#cookies"
+                className="text-primary-foreground/80 hover:text-accent transition-colors"
+              >
                 Cookie Policy
               </a>
             </div>

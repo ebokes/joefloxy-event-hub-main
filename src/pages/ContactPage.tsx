@@ -1,17 +1,17 @@
 import Header from "@/components/Header";
-import BookingSection from "@/components/BookingSection";
 import Footer from "@/components/Footer";
+import ContactSection from "@/components/ContactSection";
 
-const BookingPage = () => {
+const ContactPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
       <main>
-        <BookingSection />
+        <ContactSection />
       </main>
       <Footer />
     </div>
   );
 };
 
-export default BookingPage;
+export default ContactPage;

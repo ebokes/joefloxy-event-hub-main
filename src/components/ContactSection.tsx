@@ -10,27 +10,27 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+234 123 456 7890", "+234 987 654 3210"],
-      color: "text-accent"
+      details: ["+234 703 668 4105"],
+      color: "text-accent",
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["hello@joefloxygloba.com", "bookings@joefloxygloba.com"],
-      color: "text-primary"
+      details: ["hello@joefloxyglobal.com", "bookings@joefloxyglobal.com"],
+      color: "text-primary",
     },
     {
       icon: MapPin,
       title: "Address",
-      details: ["123 Event Plaza", "Lagos, Nigeria"],
-      color: "text-accent"
+      details: ["62 New Market Road, Onitsha, Anambara, Nigeria"],
+      color: "text-accent",
     },
     {
       icon: Clock,
       title: "Business Hours",
       details: ["Mon - Fri: 9:00 AM - 6:00 PM", "Sat: 10:00 AM - 4:00 PM"],
-      color: "text-primary"
-    }
+      color: "text-primary",
+    },
   ];
 
   return (
@@ -44,7 +44,8 @@ const ContactSection = () => {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to start planning your perfect event? Contact us today for a free consultation and let's bring your vision to life.
+            Ready to start planning your perfect event? Contact us today for a
+            free consultation and let's bring your vision to life.
           </p>
         </div>
 
@@ -52,21 +53,30 @@ const ContactSection = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-3xl font-bold mb-8">Let's Talk About Your Event</h3>
+              <h3 className="text-3xl font-bold mb-8">
+                Let's Talk About Your Event
+              </h3>
               <p className="text-lg text-muted-foreground mb-8">
-                Whether you're planning a wedding, corporate event, birthday party, or any special occasion, we're here to help make it extraordinary.
+                Whether you're planning a wedding, corporate event, birthday
+                party, or any special occasion, we're here to help make it
+                extraordinary.
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6">
               {contactInfo.map((info) => (
-                <Card key={info.title} className="p-6 hover:shadow-card transition-all duration-300">
+                <Card
+                  key={info.title}
+                  className="p-6 hover:shadow-card transition-all duration-300"
+                >
                   <div className="flex items-start gap-4">
                     <div className="p-3 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full">
                       <info.icon className={`w-6 h-6 ${info.color}`} />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg mb-2">{info.title}</h4>
+                      <h4 className="font-semibold text-lg mb-2">
+                        {info.title}
+                      </h4>
                       {info.details.map((detail, index) => (
                         <p key={index} className="text-muted-foreground">
                           {detail}
@@ -79,9 +89,12 @@ const ContactSection = () => {
             </div>
 
             <div className="bg-gradient-primary p-8 rounded-lg text-white">
-              <h4 className="text-2xl font-bold mb-4">Quick Response Guarantee</h4>
+              <h4 className="text-2xl font-bold mb-4">
+                Quick Response Guarantee
+              </h4>
               <p className="mb-4">
-                We understand that event planning is time-sensitive. That's why we guarantee a response to all inquiries within 24 hours.
+                We understand that event planning is time-sensitive. That's why
+                we guarantee a response to all inquiries within 24 hours.
               </p>
               <div className="flex items-center gap-2 text-accent">
                 <Clock className="w-5 h-5" />
@@ -146,7 +159,11 @@ const ContactSection = () => {
                     />
                   </div>
 
-                  <Button variant="hero" size="lg" className="w-full text-lg py-6">
+                  <Button
+                    variant="hero"
+                    size="lg"
+                    className="w-full text-lg py-6"
+                  >
                     Send Message
                   </Button>
                 </form>

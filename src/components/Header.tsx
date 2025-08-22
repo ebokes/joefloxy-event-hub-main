@@ -14,7 +14,7 @@ const Header = () => {
     { href: "/floral-catalog", label: "Floral Catalog" },
     { href: "/gallery", label: "Gallery" },
     { href: "/blog", label: "Blog" },
-    { href: "#contact", label: "Contact" },
+    { href: "/contact", label: "Contact" },
   ];
 
   const isActive = (href: string) => {
@@ -31,11 +31,24 @@ const Header = () => {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-accent" />
-              <span>+234 123 456 7890</span>
+              <span
+                className="cursor-pointer"
+                onClick={() => window.open("tel:+2347036684105", "_self")}
+              >
+                +234 703 668 4105
+              </span>
             </div>
+
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-accent" />
-              <span>hello@joefloxygloba.com</span>
+              <span
+                className="cursor-pointer"
+                onClick={() =>
+                  window.open("mailto:kingsleyogbumuo94@gmail.com", "_self")
+                }
+              >
+                hello@joefloxyglobal.com
+              </span>
             </div>
           </div>
           <div className="text-muted-foreground">
@@ -68,10 +81,10 @@ const Header = () => {
 
           <div className="hidden md:flex items-center gap-4">
             <Button variant="outline" size="sm" asChild>
-              <a href="/booking">Book Now</a>
+              <Link to="/booking">Book Now</Link>
             </Button>
-            <Button variant="luxury" size="sm">
-              Get Quote
+            <Button variant="luxury" size="sm" asChild>
+              <Link to="/contact">Get Quote</Link>
             </Button>
           </div>
 
@@ -106,8 +119,8 @@ const Header = () => {
                 <Button variant="outline" size="sm" asChild>
                   <a href="/booking">Book Now</a>
                 </Button>
-                <Button variant="luxury" size="sm">
-                  Get Quote
+                <Button variant="luxury" size="sm" asChild>
+                  <Link to="/contact">Get Quote</Link>
                 </Button>
               </div>
             </nav>

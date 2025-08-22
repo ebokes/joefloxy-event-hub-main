@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Star, Users } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -26,18 +27,32 @@ const HeroSection = () => {
               </span>
               Moments
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-              Transform your special occasions into extraordinary experiences with JOEFLOXY GLOBAL's premium event planning, decoration, and rental services.
+              Transform your special occasions into extraordinary experiences
+              with JOEFLOXY GLOBAL's premium event planning, decoration, and
+              rental services.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button variant="luxury" size="lg" className="text-lg px-8 py-6">
-                <Calendar className="mr-2" />
-                Book Your Event
+              <Button
+                variant="luxury"
+                size="lg"
+                className="text-lg px-8 py-6"
+                asChild
+              >
+                <span>
+                  <Calendar className="mr-2" />
+                  <Link to="/booking">Book Your Event</Link>
+                </span>
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-primary">
-                View Services
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-primary"
+                asChild
+              >
+                <Link to="/services">View Services</Link>
               </Button>
             </div>
 
@@ -50,14 +65,20 @@ const HeroSection = () => {
                 </div>
                 <p className="text-white/80">Events Completed</p>
               </div>
-              <div className="text-center animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
+              <div
+                className="text-center animate-slide-in-left"
+                style={{ animationDelay: "0.2s" }}
+              >
                 <div className="flex items-center justify-center mb-2">
                   <Users className="w-6 h-6 text-accent mr-2" />
                   <span className="text-3xl font-bold text-white">1000+</span>
                 </div>
                 <p className="text-white/80">Happy Clients</p>
               </div>
-              <div className="text-center animate-slide-in-left" style={{ animationDelay: '0.4s' }}>
+              <div
+                className="text-center animate-slide-in-left"
+                style={{ animationDelay: "0.4s" }}
+              >
                 <div className="flex items-center justify-center mb-2">
                   <Calendar className="w-6 h-6 text-accent mr-2" />
                   <span className="text-3xl font-bold text-white">5+</span>
