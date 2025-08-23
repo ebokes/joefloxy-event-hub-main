@@ -12,6 +12,7 @@ import budgetFriendly from "@/assets/budget-friendly.jpg";
 import tableSetting from "@/assets/table-setting.jpg";
 import eventPlanning from "@/assets/event-planning.jpg";
 import stageBackdrop from "@/assets/stage-backdrop.jpg";
+import FloatingChat from "@/components/ui/floating-icons";
 
 const BlogPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -194,7 +195,7 @@ const BlogPage = () => {
           </div>
         </div>
       </section>
-
+      <FloatingChat />
       <Footer />
     </div>
   );

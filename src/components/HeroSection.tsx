@@ -17,7 +17,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 pt-10 md:pt-0">
         <div className="max-w-3xl">
           <div className="animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
@@ -57,10 +57,10 @@ const HeroSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/20">
+            <div className="grid grid-cols-3 gap-8 py-8 border-t border-white/20">
               <div className="text-center animate-slide-in-left">
                 <div className="flex items-center justify-center mb-2">
-                  <Star className="w-6 h-6 text-accent mr-2" />
+                  <Star className="hidden sm:inline w-6 h-6 text-accent mr-2" />
                   <span className="text-3xl font-bold text-white">500+</span>
                 </div>
                 <p className="text-white/80">Events Completed</p>
@@ -70,7 +70,7 @@ const HeroSection = () => {
                 style={{ animationDelay: "0.2s" }}
               >
                 <div className="flex items-center justify-center mb-2">
-                  <Users className="w-6 h-6 text-accent mr-2" />
+                  <Users className="hidden sm:inline w-6 h-6 text-accent mr-2" />
                   <span className="text-3xl font-bold text-white">1000+</span>
                 </div>
                 <p className="text-white/80">Happy Clients</p>
@@ -80,8 +80,8 @@ const HeroSection = () => {
                 style={{ animationDelay: "0.4s" }}
               >
                 <div className="flex items-center justify-center mb-2">
-                  <Calendar className="w-6 h-6 text-accent mr-2" />
-                  <span className="text-3xl font-bold text-white">5+</span>
+                  <Calendar className="hidden sm:inline w-6 h-6 text-accent mr-2" />
+                  <span className="text-3xl font-bold text-white">11+</span>
                 </div>
                 <p className="text-white/80">Years Experience</p>
               </div>

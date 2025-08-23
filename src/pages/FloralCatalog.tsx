@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { ShoppingCart, Star, Search, Heart, Filter } from "lucide-react";
@@ -12,6 +18,7 @@ import floral3 from "@/assets/floral-3.jpg";
 import floral4 from "@/assets/floral-4.jpg";
 import floral5 from "@/assets/floral-5.jpg";
 import floral6 from "@/assets/floral-6.jpg";
+import FloatingChat from "@/components/ui/floating-icons";
 
 const FloralCatalog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -20,11 +27,11 @@ const FloralCatalog = () => {
   const categories = [
     "All",
     "Bridal Bouquets",
-    "Centerpieces", 
+    "Centerpieces",
     "Ceremony Arrangements",
     "Table Garlands",
     "Floral Backdrops",
-    "Corporate Events"
+    "Corporate Events",
   ];
 
   const floralProducts = [
@@ -36,9 +43,10 @@ const FloralCatalog = () => {
       rating: 4.9,
       image: floral1,
       category: "Bridal Bouquets",
-      description: "Elegant white roses with eucalyptus greenery, perfect for traditional weddings",
+      description:
+        "Elegant white roses with eucalyptus greenery, perfect for traditional weddings",
       inStock: true,
-      featured: true
+      featured: true,
     },
     {
       id: 2,
@@ -47,9 +55,10 @@ const FloralCatalog = () => {
       rating: 4.8,
       image: floral2,
       category: "Centerpieces",
-      description: "Vibrant mixed flowers in glass vase, brings color to any celebration",
+      description:
+        "Vibrant mixed flowers in glass vase, brings color to any celebration",
       inStock: true,
-      featured: false
+      featured: false,
     },
     {
       id: 3,
@@ -58,9 +67,10 @@ const FloralCatalog = () => {
       rating: 4.9,
       image: floral3,
       category: "Ceremony Arrangements",
-      description: "Luxury floral arch with pink and white blooms for unforgettable ceremonies",
+      description:
+        "Luxury floral arch with pink and white blooms for unforgettable ceremonies",
       inStock: true,
-      featured: true
+      featured: true,
     },
     {
       id: 4,
@@ -69,9 +79,10 @@ const FloralCatalog = () => {
       rating: 4.7,
       image: floral4,
       category: "Table Garlands",
-      description: "Natural eucalyptus with white accents, perfect for rustic or modern events",
+      description:
+        "Natural eucalyptus with white accents, perfect for rustic or modern events",
       inStock: true,
-      featured: false
+      featured: false,
     },
     {
       id: 5,
@@ -82,7 +93,7 @@ const FloralCatalog = () => {
       category: "Bridal Bouquets",
       description: "Stunning purple and white arrangement for the modern bride",
       inStock: false,
-      featured: false
+      featured: false,
     },
     {
       id: 6,
@@ -91,25 +102,28 @@ const FloralCatalog = () => {
       rating: 5.0,
       image: floral6,
       category: "Floral Backdrops",
-      description: "Instagram-worthy flower wall perfect for photos and grand entrances",
+      description:
+        "Instagram-worthy flower wall perfect for photos and grand entrances",
       inStock: true,
-      featured: true
-    }
+      featured: true,
+    },
   ];
 
-  const filteredProducts = floralProducts.filter(product => {
-    const matchesCategory = selectedCategory === "All" || product.category === selectedCategory;
-    const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         product.description.toLowerCase().includes(searchQuery.toLowerCase());
+  const filteredProducts = floralProducts.filter((product) => {
+    const matchesCategory =
+      selectedCategory === "All" || product.category === selectedCategory;
+    const matchesSearch =
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
-  const featuredProducts = floralProducts.filter(product => product.featured);
+  const featuredProducts = floralProducts.filter((product) => product.featured);
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-hero">
         <div className="container mx-auto px-4 text-center">
@@ -120,10 +134,10 @@ const FloralCatalog = () => {
             </span>
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">
-            Discover our exquisite collection of fresh floral arrangements, 
+            Discover our exquisite collection of fresh floral arrangements,
             handcrafted by expert florists for your special moments.
           </p>
-          
+
           {/* Search Bar */}
           <div className="max-w-2xl mx-auto relative">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
@@ -143,22 +157,29 @@ const FloralCatalog = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Featured Arrangements</h2>
-            <p className="text-muted-foreground">Our most popular and stunning floral creations</p>
+            <p className="text-muted-foreground">
+              Our most popular and stunning floral creations
+            </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {featuredProducts.map((product) => (
-              <Card key={product.id} className="group hover:shadow-card transition-all duration-300 hover:-translate-y-2">
+              <Card
+                key={product.id}
+                className="group hover:shadow-card transition-all duration-300 hover:-translate-y-2"
+              >
                 <CardHeader className="p-0">
                   <div className="relative overflow-hidden rounded-t-lg">
-                    <img 
-                      src={product.image} 
+                    <img
+                      src={product.image}
                       alt={product.name}
                       className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <Badge className="absolute top-4 left-4 bg-accent">Featured</Badge>
-                    <Button 
-                      variant="ghost" 
+                    <Badge className="absolute top-4 left-4 bg-accent">
+                      Featured
+                    </Badge>
+                    <Button
+                      variant="ghost"
                       size="icon"
                       className="absolute top-4 right-4 bg-white/20 hover:bg-white/30 text-white"
                     >
@@ -171,16 +192,24 @@ const FloralCatalog = () => {
                     <Badge variant="outline">{product.category}</Badge>
                     <div className="flex items-center gap-1">
                       <Star className="w-4 h-4 fill-accent text-accent" />
-                      <span className="text-sm font-medium">{product.rating}</span>
+                      <span className="text-sm font-medium">
+                        {product.rating}
+                      </span>
                     </div>
                   </div>
                   <CardTitle className="text-xl mb-2">{product.name}</CardTitle>
-                  <CardDescription className="mb-4">{product.description}</CardDescription>
+                  <CardDescription className="mb-4">
+                    {product.description}
+                  </CardDescription>
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
-                      <span className="text-2xl font-bold text-accent">{product.price}</span>
+                      <span className="text-2xl font-bold text-accent">
+                        {product.price}
+                      </span>
                       {product.originalPrice && (
-                        <span className="text-sm text-muted-foreground line-through">{product.originalPrice}</span>
+                        <span className="text-sm text-muted-foreground line-through">
+                          {product.originalPrice}
+                        </span>
                       )}
                     </div>
                     <Button variant="accent" size="sm" className="gap-2">
@@ -221,19 +250,24 @@ const FloralCatalog = () => {
           {/* Products Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredProducts.map((product) => (
-              <Card key={product.id} className="group hover:shadow-card transition-all duration-300 hover:-translate-y-1">
+              <Card
+                key={product.id}
+                className="group hover:shadow-card transition-all duration-300 hover:-translate-y-1"
+              >
                 <CardHeader className="p-0">
                   <div className="relative overflow-hidden rounded-t-lg">
-                    <img 
-                      src={product.image} 
+                    <img
+                      src={product.image}
                       alt={product.name}
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     {product.featured && (
-                      <Badge className="absolute top-3 left-3 bg-accent text-xs">Featured</Badge>
+                      <Badge className="absolute top-3 left-3 bg-accent text-xs">
+                        Featured
+                      </Badge>
                     )}
-                    <Button 
-                      variant="ghost" 
+                    <Button
+                      variant="ghost"
                       size="icon"
                       className="absolute top-3 right-3 bg-white/20 hover:bg-white/30 text-white opacity-0 group-hover:opacity-100 transition-opacity"
                     >
@@ -243,23 +277,34 @@ const FloralCatalog = () => {
                 </CardHeader>
                 <CardContent className="p-4">
                   <div className="flex justify-between items-start mb-2">
-                    <Badge variant={product.inStock ? "default" : "destructive"} className="text-xs">
+                    <Badge
+                      variant={product.inStock ? "default" : "destructive"}
+                      className="text-xs"
+                    >
                       {product.inStock ? "In Stock" : "Pre-order"}
                     </Badge>
                     <div className="flex items-center gap-1">
                       <Star className="w-3 h-3 fill-accent text-accent" />
-                      <span className="text-xs font-medium">{product.rating}</span>
+                      <span className="text-xs font-medium">
+                        {product.rating}
+                      </span>
                     </div>
                   </div>
-                  <CardTitle className="text-base mb-2">{product.name}</CardTitle>
+                  <CardTitle className="text-base mb-2">
+                    {product.name}
+                  </CardTitle>
                   <CardDescription className="text-sm mb-3 line-clamp-2">
                     {product.description}
                   </CardDescription>
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-1">
-                      <span className="text-lg font-bold text-accent">{product.price}</span>
+                      <span className="text-lg font-bold text-accent">
+                        {product.price}
+                      </span>
                       {product.originalPrice && (
-                        <span className="text-xs text-muted-foreground line-through">{product.originalPrice}</span>
+                        <span className="text-xs text-muted-foreground line-through">
+                          {product.originalPrice}
+                        </span>
                       )}
                     </div>
                     <Button
@@ -278,10 +323,15 @@ const FloralCatalog = () => {
 
           {filteredProducts.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-muted-foreground text-lg">No products found matching your criteria.</p>
-              <Button 
-                variant="outline" 
-                onClick={() => {setSelectedCategory("All"); setSearchQuery("");}}
+              <p className="text-muted-foreground text-lg">
+                No products found matching your criteria.
+              </p>
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setSelectedCategory("All");
+                  setSearchQuery("");
+                }}
                 className="mt-4"
               >
                 Clear Filters
@@ -290,7 +340,7 @@ const FloralCatalog = () => {
           )}
         </div>
       </section>
-
+      <FloatingChat />
       <Footer />
     </div>
   );

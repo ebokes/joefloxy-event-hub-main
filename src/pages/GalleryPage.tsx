@@ -1,14 +1,17 @@
 import Header from "@/components/Header";
-import GallerySection from "@/components/GallerySection";
+
 import Footer from "@/components/Footer";
+import FloatingChat from "@/components/ui/floating-icons";
+import GallerySection from "@/components/GallerySection";
 
 const GalleryPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-20">
+      <main>
         <GallerySection />
       </main>
+      <FloatingChat />
       <Footer />
     </div>
   );

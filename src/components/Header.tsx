@@ -58,11 +58,11 @@ const Header = () => {
 
         {/* Main Navigation */}
         <div className="flex justify-between items-center py-4">
-          <div className="flex items-center">
+          <Link to={"/"} className="flex items-center">
             <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
               JOEFLOXY GLOBAL
             </h1>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">

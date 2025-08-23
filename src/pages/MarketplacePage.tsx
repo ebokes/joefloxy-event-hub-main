@@ -1,14 +1,16 @@
 import Header from "@/components/Header";
 import MarketplaceSection from "@/components/MarketplaceSection";
 import Footer from "@/components/Footer";
+import FloatingChat from "@/components/ui/floating-icons";
 
 const MarketplacePage = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-20">
+      <main>
         <MarketplaceSection />
       </main>
+      <FloatingChat />
       <Footer />
     </div>
   );

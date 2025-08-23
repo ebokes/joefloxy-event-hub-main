@@ -8,9 +8,9 @@ import portfolio3 from "@/assets/portfolio-3.jpg";
 import portfolio4 from "@/assets/portfolio-4.jpg";
 import portfolio5 from "@/assets/portfolio-5.jpg";
 import portfolio6 from "@/assets/portfolio-6.jpg";
-import LinkButton from "./ui/LinkButton";
+import LinkButton from "../ui/LinkButton";
 
-const GallerySection = () => {
+const HomeGallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const portfolioItems = [
@@ -53,45 +53,6 @@ const GallerySection = () => {
         date: "October 2023",
       },
     },
-    {
-      id: 4,
-      image: portfolio4,
-      title: "Garden Party",
-      category: "Social",
-      description:
-        "Elegant outdoor garden party with natural elements, fairy lights, and rustic charm.",
-      details: {
-        guests: "150+",
-        location: "Victoria Island Gardens",
-        date: "September 2023",
-      },
-    },
-    {
-      id: 5,
-      image: portfolio5,
-      title: "Charity Gala",
-      category: "Charity",
-      description:
-        "Sophisticated charity gala with black and gold theme, creating an atmosphere of luxury and purpose.",
-      details: {
-        guests: "300+",
-        location: "Four Points by Sheraton",
-        date: "August 2023",
-      },
-    },
-    {
-      id: 6,
-      image: portfolio6,
-      title: "Cultural Festival",
-      category: "Cultural",
-      description:
-        "Vibrant cultural celebration showcasing traditional elements with modern event planning excellence.",
-      details: {
-        guests: "1000+",
-        location: "National Theatre",
-        date: "July 2023",
-      },
-    },
   ];
 
   const categories = [
@@ -114,31 +75,18 @@ const GallerySection = () => {
     <section id="gallery" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Our
-            <span className="block bg-gradient-accent bg-clip-text text-transparent">
+          <div className="flex flex-wrap justify-center gap-2 md:mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold ">Our</h2>{" "}
+            <span className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-accent bg-clip-text text-transparent">
               Portfolio
             </span>
-          </h2>
+          </div>
+
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Take a look at some of our recent projects and see how we transform
             ordinary spaces into extraordinary experiences.
           </p>
         </div>
-
-        {/* Category Filter
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
-            <Button
-              key={category}
-              variant={activeCategory === category ? "accent" : "outline"}
-              onClick={() => setActiveCategory(category)}
-              className="transition-all duration-300"
-            >
-              {category}
-            </Button>
-          ))}
-        </div> */}
 
         {/* Portfolio Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -269,9 +217,13 @@ const GallerySection = () => {
             </div>
           </div>
         )}
+
+        <div className="text-center">
+          <LinkButton to="/gallery" text="View Complete Portfolio" />
+        </div>
       </div>
     </section>
   );
 };
 
-export default GallerySection;
+export default HomeGallerySection;
